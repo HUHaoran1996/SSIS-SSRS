@@ -1,0 +1,1568 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/2/2019 10:44:34 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-ON5OQ5M"
+  DTS:CreatorName="DESKTOP-ON5OQ5M\dell"
+  DTS:DTSID="{A8930615-270E-444B-A768-088C09C887E1}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="12.0.6024.0"
+  DTS:LocaleID="2052"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{4BF56CEB-28F5-4802-B652-26CCE4D2449A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[book_excel]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{2F093CCC-D4FB-464E-84BA-ACFC982675B6}"
+      DTS:ObjectName="book_excel">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\dell\Desktop\book.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-ON5OQ5M.BI_ProjectDW_book]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7737F914-5F74-4D86-9AD5-FFB7637C4676}"
+      DTS:ObjectName="DESKTOP-ON5OQ5M.BI_ProjectDW_book">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-ON5OQ5M;Initial Catalog=BI_ProjectDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-ON5OQ5M.BI_ProjectDW_book_library]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B90DA375-5AB2-44FA-B21F-EADA36F5D889}"
+      DTS:ObjectName="DESKTOP-ON5OQ5M.BI_ProjectDW_book_library">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-ON5OQ5M;Initial Catalog=BI_ProjectDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-ON5OQ5M.BI_ProjectDW_library]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A18BBF5B-F161-45B8-BBF4-E6154CA99FFA}"
+      DTS:ObjectName="DESKTOP-ON5OQ5M.BI_ProjectDW_library">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-ON5OQ5M;Initial Catalog=BI_ProjectDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[library_book_excel]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{2E022C56-94B7-400D-9B29-E3EE00CE4180}"
+      DTS:ObjectName="library_book_excel">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\dell\Desktop\library_book.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[library_excel]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{7D98BA9B-97AB-4997-8C3E-95ADE7212F32}"
+      DTS:ObjectName="library_excel">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\dell\Desktop\library.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SQL Task1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="执行 SQL 任务"
+      DTS:DTSID="{F1F41FD6-1D5B-4EC7-BD1A-88E28881F4DE}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Task1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{7737F914-5F74-4D86-9AD5-FFB7637C4676}"
+          SQLTask:SqlStatementSource="DELETE FROM book" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Task2"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="执行 SQL 任务"
+      DTS:DTSID="{F75F4398-CFE3-4E54-9054-481F7084BAFD}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Task2"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A18BBF5B-F161-45B8-BBF4-E6154CA99FFA}"
+          SQLTask:SqlStatementSource="delete from library" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Task3"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="执行 SQL 任务"
+      DTS:DTSID="{3E3449E5-AD82-4F76-A50E-F6D066A7703C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Task3"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B90DA375-5AB2-44FA-B21F-EADA36F5D889}"
+          SQLTask:SqlStatementSource="DELETE FROM library_book" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\数据流任务"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="数据流任务"
+      DTS:DTSID="{FAF70282-74A8-404E-BDCB-27CF01D4FE23}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="数据流任务"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\数据流任务\OLE DB 目标"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB 目标;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;4"
+              description="OLE DB 目标"
+              name="OLE DB 目标"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="指定用于打开行集的数据库对象的名称。"
+                  name="OpenRowset">[dbo].[library_book]</property>
+                <property
+                  dataType="System.String"
+                  description="指定包含用于打开行集的数据库对象名的变量。"
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="要执行的 SQL 命令。"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="指定当数据源中没有代码页信息时使用的列代码页。"
+                  name="DefaultCodePage">936</property>
+                <property
+                  dataType="System.Boolean"
+                  description="描述字符数据时，强制使用 DefaultCodePage 属性值。"
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="指定用于访问数据库的模式。"
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="指示是否将为标识列提供的值复制到目标。如果设置为 False，则将在目标中为标识列自动生成值。仅当启用了快速加载时适用。"
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="指示对于包含 Null 值的列是否将 Null 值插入目标中。如果为 False，则对于包含 Null 值的列会将其默认值插入目标中。仅当启用了快速加载时适用。"
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="指定将用于快速加载的选项。仅当启用了快速加载时适用。"
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="指定在插入数据期间何时发出提交命令。如果值为 0，则指定在数据插入结束时发出一个提交命令。仅当启用了快速加载时适用。"
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\数据流任务\OLE DB 目标.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ON5OQ5M.BI_ProjectDW_book_library]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ON5OQ5M.BI_ProjectDW_book_library]"
+                  description="指定用于访问数据库的 OLE DB 运行时连接。"
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入]"
+                  errorOrTruncationOperation="插入"
+                  errorRowDisposition="IgnoreFailure"
+                  hasSideEffects="true"
+                  name="OLE DB 目标输入">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[id_book]"
+                      cachedDataType="r8"
+                      cachedName="id_book"
+                      externalMetadataColumnId="Package\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[id_book]"
+                      lineageId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].Columns[id_book]" />
+                    <inputColumn
+                      refId="Package\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[id]"
+                      cachedDataType="r8"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[id]"
+                      lineageId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].Columns[id]" />
+                    <inputColumn
+                      refId="Package\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[id_library]"
+                      cachedDataType="r8"
+                      cachedName="id_library"
+                      externalMetadataColumnId="Package\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[id_library]"
+                      lineageId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].Columns[id_library]" />
+                    <inputColumn
+                      refId="Package\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[time]"
+                      cachedDataType="date"
+                      cachedName="time"
+                      externalMetadataColumnId="Package\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[time]"
+                      lineageId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].Columns[time]" />
+                    <inputColumn
+                      refId="Package\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[status]"
+                      cachedDataType="bool"
+                      cachedName="status"
+                      externalMetadataColumnId="Package\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[status]"
+                      lineageId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].Columns[status]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[id_library]"
+                      dataType="i4"
+                      name="id_library" />
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[id_book]"
+                      dataType="i4"
+                      name="id_book" />
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[status]"
+                      dataType="wstr"
+                      length="50"
+                      name="status" />
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[time]"
+                      dataType="dbDate"
+                      name="time" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\数据流任务\OLE DB 目标.Outputs[OLE DB 目标错误输出]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB 目标错误输出"
+                  synchronousInputId="Package\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\数据流任务\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\数据流任务\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\数据流任务\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\数据流任务\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\数据流任务\open_book"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel 源;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;1"
+              description="Excel 源"
+              name="open_book"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="指定用于打开行集的数据库对象的名称。"
+                  name="OpenRowset">book$</property>
+                <property
+                  dataType="System.String"
+                  description="指定包含用于打开行集的数据库对象名的变量。"
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="要执行的 SQL 命令。"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="包含要执行的 SQL 命令的变量。"
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="指定用于访问数据库的模式。"
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="从 SQL 命令中的参数到变量的映射。"
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\数据流任务\open_book.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[book_excel]"
+                  connectionManagerRefId="Package.ConnectionManagers[book_excel]"
+                  description="指定用于访问数据库的 OLE DB 运行时连接。"
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\数据流任务\open_book.Outputs[Excel 源输出]"
+                  name="Excel 源输出">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\数据流任务\open_book.Outputs[Excel 源输出].Columns[id_book]"
+                      dataType="r8"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\数据流任务\open_book.Outputs[Excel 源输出].ExternalColumns[id_book]"
+                      lineageId="Package\数据流任务\open_book.Outputs[Excel 源输出].Columns[id_book]"
+                      name="id_book"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_book.Outputs[Excel 源输出].Columns[name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\数据流任务\open_book.Outputs[Excel 源输出].ExternalColumns[name]"
+                      length="255"
+                      lineageId="Package\数据流任务\open_book.Outputs[Excel 源输出].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_book.Outputs[Excel 源输出].Columns[category]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\数据流任务\open_book.Outputs[Excel 源输出].ExternalColumns[category]"
+                      length="255"
+                      lineageId="Package\数据流任务\open_book.Outputs[Excel 源输出].Columns[category]"
+                      name="category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_book.Outputs[Excel 源输出].Columns[language]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\数据流任务\open_book.Outputs[Excel 源输出].ExternalColumns[language]"
+                      length="255"
+                      lineageId="Package\数据流任务\open_book.Outputs[Excel 源输出].Columns[language]"
+                      name="language"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\open_book.Outputs[Excel 源输出].ExternalColumns[id_book]"
+                      dataType="r8"
+                      name="id_book" />
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\open_book.Outputs[Excel 源输出].ExternalColumns[name]"
+                      dataType="wstr"
+                      length="255"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\open_book.Outputs[Excel 源输出].ExternalColumns[category]"
+                      dataType="wstr"
+                      length="255"
+                      name="category" />
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\open_book.Outputs[Excel 源输出].ExternalColumns[language]"
+                      dataType="wstr"
+                      length="255"
+                      name="language" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\数据流任务\open_book.Outputs[Excel 源错误输出]"
+                  isErrorOut="true"
+                  name="Excel 源错误输出">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\数据流任务\open_book.Outputs[Excel 源错误输出].Columns[id_book]"
+                      dataType="r8"
+                      lineageId="Package\数据流任务\open_book.Outputs[Excel 源错误输出].Columns[id_book]"
+                      name="id_book" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_book.Outputs[Excel 源错误输出].Columns[name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\数据流任务\open_book.Outputs[Excel 源错误输出].Columns[name]"
+                      name="name" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_book.Outputs[Excel 源错误输出].Columns[category]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\数据流任务\open_book.Outputs[Excel 源错误输出].Columns[category]"
+                      name="category" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_book.Outputs[Excel 源错误输出].Columns[language]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\数据流任务\open_book.Outputs[Excel 源错误输出].Columns[language]"
+                      name="language" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_book.Outputs[Excel 源错误输出].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\数据流任务\open_book.Outputs[Excel 源错误输出].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_book.Outputs[Excel 源错误输出].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\数据流任务\open_book.Outputs[Excel 源错误输出].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\数据流任务\open_library"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel 源;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;1"
+              description="Excel 源"
+              name="open_library"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="指定用于打开行集的数据库对象的名称。"
+                  name="OpenRowset">library$</property>
+                <property
+                  dataType="System.String"
+                  description="指定包含用于打开行集的数据库对象名的变量。"
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="要执行的 SQL 命令。"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="包含要执行的 SQL 命令的变量。"
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="指定用于访问数据库的模式。"
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="从 SQL 命令中的参数到变量的映射。"
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\数据流任务\open_library.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[library_excel]"
+                  connectionManagerRefId="Package.ConnectionManagers[library_excel]"
+                  description="指定用于访问数据库的 OLE DB 运行时连接。"
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\数据流任务\open_library.Outputs[Excel 源输出]"
+                  name="Excel 源输出">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\数据流任务\open_library.Outputs[Excel 源输出].Columns[id_library]"
+                      dataType="r8"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\数据流任务\open_library.Outputs[Excel 源输出].ExternalColumns[id_library]"
+                      lineageId="Package\数据流任务\open_library.Outputs[Excel 源输出].Columns[id_library]"
+                      name="id_library"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_library.Outputs[Excel 源输出].Columns[address]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\数据流任务\open_library.Outputs[Excel 源输出].ExternalColumns[address]"
+                      length="255"
+                      lineageId="Package\数据流任务\open_library.Outputs[Excel 源输出].Columns[address]"
+                      name="address"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_library.Outputs[Excel 源输出].Columns[open_time]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\数据流任务\open_library.Outputs[Excel 源输出].ExternalColumns[open_time]"
+                      length="255"
+                      lineageId="Package\数据流任务\open_library.Outputs[Excel 源输出].Columns[open_time]"
+                      name="open_time"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\open_library.Outputs[Excel 源输出].ExternalColumns[id_library]"
+                      dataType="r8"
+                      name="id_library" />
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\open_library.Outputs[Excel 源输出].ExternalColumns[address]"
+                      dataType="wstr"
+                      length="255"
+                      name="address" />
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\open_library.Outputs[Excel 源输出].ExternalColumns[open_time]"
+                      dataType="wstr"
+                      length="255"
+                      name="open_time" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\数据流任务\open_library.Outputs[Excel 源错误输出]"
+                  isErrorOut="true"
+                  name="Excel 源错误输出">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\数据流任务\open_library.Outputs[Excel 源错误输出].Columns[id_library]"
+                      dataType="r8"
+                      lineageId="Package\数据流任务\open_library.Outputs[Excel 源错误输出].Columns[id_library]"
+                      name="id_library" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_library.Outputs[Excel 源错误输出].Columns[address]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\数据流任务\open_library.Outputs[Excel 源错误输出].Columns[address]"
+                      name="address" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_library.Outputs[Excel 源错误输出].Columns[open_time]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\数据流任务\open_library.Outputs[Excel 源错误输出].Columns[open_time]"
+                      name="open_time" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_library.Outputs[Excel 源错误输出].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\数据流任务\open_library.Outputs[Excel 源错误输出].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_library.Outputs[Excel 源错误输出].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\数据流任务\open_library.Outputs[Excel 源错误输出].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\数据流任务\open_library_book"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel 源;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;1"
+              description="Excel 源"
+              name="open_library_book"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="指定用于打开行集的数据库对象的名称。"
+                  name="OpenRowset">library_book$</property>
+                <property
+                  dataType="System.String"
+                  description="指定包含用于打开行集的数据库对象名的变量。"
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="要执行的 SQL 命令。"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="包含要执行的 SQL 命令的变量。"
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="指定用于访问数据库的模式。"
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="从 SQL 命令中的参数到变量的映射。"
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\数据流任务\open_library_book.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[library_book_excel]"
+                  connectionManagerRefId="Package.ConnectionManagers[library_book_excel]"
+                  description="指定用于访问数据库的 OLE DB 运行时连接。"
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\数据流任务\open_library_book.Outputs[Excel 源输出]"
+                  name="Excel 源输出">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].Columns[id_book]"
+                      dataType="r8"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].ExternalColumns[id_book]"
+                      lineageId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].Columns[id_book]"
+                      name="id_book"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].Columns[id]"
+                      dataType="r8"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].ExternalColumns[id]"
+                      lineageId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].Columns[id_library]"
+                      dataType="r8"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].ExternalColumns[id_library]"
+                      lineageId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].Columns[id_library]"
+                      name="id_library"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].Columns[time]"
+                      dataType="date"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].ExternalColumns[time]"
+                      lineageId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].Columns[time]"
+                      name="time"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].Columns[status]"
+                      dataType="bool"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].ExternalColumns[status]"
+                      lineageId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].Columns[status]"
+                      name="status"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].ExternalColumns[id_book]"
+                      dataType="r8"
+                      name="id_book" />
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].ExternalColumns[id]"
+                      dataType="r8"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].ExternalColumns[id_library]"
+                      dataType="r8"
+                      name="id_library" />
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].ExternalColumns[time]"
+                      dataType="date"
+                      name="time" />
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].ExternalColumns[status]"
+                      dataType="bool"
+                      name="status" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\数据流任务\open_library_book.Outputs[Excel 源错误输出]"
+                  isErrorOut="true"
+                  name="Excel 源错误输出">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\数据流任务\open_library_book.Outputs[Excel 源错误输出].Columns[id]"
+                      dataType="r8"
+                      lineageId="Package\数据流任务\open_library_book.Outputs[Excel 源错误输出].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_library_book.Outputs[Excel 源错误输出].Columns[id_library]"
+                      dataType="r8"
+                      lineageId="Package\数据流任务\open_library_book.Outputs[Excel 源错误输出].Columns[id_library]"
+                      name="id_library" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_library_book.Outputs[Excel 源错误输出].Columns[id_book]"
+                      dataType="r8"
+                      lineageId="Package\数据流任务\open_library_book.Outputs[Excel 源错误输出].Columns[id_book]"
+                      name="id_book" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_library_book.Outputs[Excel 源错误输出].Columns[time]"
+                      dataType="date"
+                      lineageId="Package\数据流任务\open_library_book.Outputs[Excel 源错误输出].Columns[time]"
+                      name="time" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_library_book.Outputs[Excel 源错误输出].Columns[status]"
+                      dataType="bool"
+                      lineageId="Package\数据流任务\open_library_book.Outputs[Excel 源错误输出].Columns[status]"
+                      name="status" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_library_book.Outputs[Excel 源错误输出].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\数据流任务\open_library_book.Outputs[Excel 源错误输出].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\数据流任务\open_library_book.Outputs[Excel 源错误输出].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\数据流任务\open_library_book.Outputs[Excel 源错误输出].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\数据流任务\write_sql_book"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB 目标;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;4"
+              description="OLE DB 目标"
+              name="write_sql_book"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="指定用于打开行集的数据库对象的名称。"
+                  name="OpenRowset">[dbo].[book]</property>
+                <property
+                  dataType="System.String"
+                  description="指定包含用于打开行集的数据库对象名的变量。"
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="要执行的 SQL 命令。"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="指定当数据源中没有代码页信息时使用的列代码页。"
+                  name="DefaultCodePage">936</property>
+                <property
+                  dataType="System.Boolean"
+                  description="描述字符数据时，强制使用 DefaultCodePage 属性值。"
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="指定用于访问数据库的模式。"
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="指示是否将为标识列提供的值复制到目标。如果设置为 False，则将在目标中为标识列自动生成值。仅当启用了快速加载时适用。"
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="指示对于包含 Null 值的列是否将 Null 值插入目标中。如果为 False，则对于包含 Null 值的列会将其默认值插入目标中。仅当启用了快速加载时适用。"
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="指定将用于快速加载的选项。仅当启用了快速加载时适用。"
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="指定在插入数据期间何时发出提交命令。如果值为 0，则指定在数据插入结束时发出一个提交命令。仅当启用了快速加载时适用。"
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\数据流任务\write_sql_book.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ON5OQ5M.BI_ProjectDW_book]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ON5OQ5M.BI_ProjectDW_book]"
+                  description="指定用于访问数据库的 OLE DB 运行时连接。"
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\数据流任务\write_sql_book.Inputs[OLE DB 目标输入]"
+                  errorOrTruncationOperation="插入"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB 目标输入">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\数据流任务\write_sql_book.Inputs[OLE DB 目标输入].Columns[id_book]"
+                      cachedDataType="r8"
+                      cachedName="id_book"
+                      externalMetadataColumnId="Package\数据流任务\write_sql_book.Inputs[OLE DB 目标输入].ExternalColumns[id_book]"
+                      lineageId="Package\数据流任务\open_book.Outputs[Excel 源输出].Columns[id_book]" />
+                    <inputColumn
+                      refId="Package\数据流任务\write_sql_book.Inputs[OLE DB 目标输入].Columns[name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="name"
+                      externalMetadataColumnId="Package\数据流任务\write_sql_book.Inputs[OLE DB 目标输入].ExternalColumns[name]"
+                      lineageId="Package\数据流任务\open_book.Outputs[Excel 源输出].Columns[name]" />
+                    <inputColumn
+                      refId="Package\数据流任务\write_sql_book.Inputs[OLE DB 目标输入].Columns[category]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="category"
+                      externalMetadataColumnId="Package\数据流任务\write_sql_book.Inputs[OLE DB 目标输入].ExternalColumns[category]"
+                      lineageId="Package\数据流任务\open_book.Outputs[Excel 源输出].Columns[category]" />
+                    <inputColumn
+                      refId="Package\数据流任务\write_sql_book.Inputs[OLE DB 目标输入].Columns[language]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="language"
+                      externalMetadataColumnId="Package\数据流任务\write_sql_book.Inputs[OLE DB 目标输入].ExternalColumns[language]"
+                      lineageId="Package\数据流任务\open_book.Outputs[Excel 源输出].Columns[language]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\write_sql_book.Inputs[OLE DB 目标输入].ExternalColumns[id_book]"
+                      dataType="i4"
+                      name="id_book" />
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\write_sql_book.Inputs[OLE DB 目标输入].ExternalColumns[name]"
+                      dataType="wstr"
+                      length="50"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\write_sql_book.Inputs[OLE DB 目标输入].ExternalColumns[category]"
+                      dataType="wstr"
+                      length="50"
+                      name="category" />
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\write_sql_book.Inputs[OLE DB 目标输入].ExternalColumns[language]"
+                      dataType="wstr"
+                      length="50"
+                      name="language" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\数据流任务\write_sql_book.Outputs[OLE DB 目标错误输出]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB 目标错误输出"
+                  synchronousInputId="Package\数据流任务\write_sql_book.Inputs[OLE DB 目标输入]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\数据流任务\write_sql_book.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\数据流任务\write_sql_book.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\数据流任务\write_sql_book.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\数据流任务\write_sql_book.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\数据流任务\write_sql_library"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB 目标;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;4"
+              description="OLE DB 目标"
+              name="write_sql_library"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="指定用于打开行集的数据库对象的名称。"
+                  name="OpenRowset">[dbo].[library]</property>
+                <property
+                  dataType="System.String"
+                  description="指定包含用于打开行集的数据库对象名的变量。"
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="要执行的 SQL 命令。"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="指定当数据源中没有代码页信息时使用的列代码页。"
+                  name="DefaultCodePage">936</property>
+                <property
+                  dataType="System.Boolean"
+                  description="描述字符数据时，强制使用 DefaultCodePage 属性值。"
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="指定用于访问数据库的模式。"
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="指示是否将为标识列提供的值复制到目标。如果设置为 False，则将在目标中为标识列自动生成值。仅当启用了快速加载时适用。"
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="指示对于包含 Null 值的列是否将 Null 值插入目标中。如果为 False，则对于包含 Null 值的列会将其默认值插入目标中。仅当启用了快速加载时适用。"
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="指定将用于快速加载的选项。仅当启用了快速加载时适用。"
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="指定在插入数据期间何时发出提交命令。如果值为 0，则指定在数据插入结束时发出一个提交命令。仅当启用了快速加载时适用。"
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\数据流任务\write_sql_library.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ON5OQ5M.BI_ProjectDW_library]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ON5OQ5M.BI_ProjectDW_library]"
+                  description="指定用于访问数据库的 OLE DB 运行时连接。"
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\数据流任务\write_sql_library.Inputs[OLE DB 目标输入]"
+                  errorOrTruncationOperation="插入"
+                  errorRowDisposition="IgnoreFailure"
+                  hasSideEffects="true"
+                  name="OLE DB 目标输入">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\数据流任务\write_sql_library.Inputs[OLE DB 目标输入].Columns[id_library]"
+                      cachedDataType="r8"
+                      cachedName="id_library"
+                      externalMetadataColumnId="Package\数据流任务\write_sql_library.Inputs[OLE DB 目标输入].ExternalColumns[id_library]"
+                      lineageId="Package\数据流任务\open_library.Outputs[Excel 源输出].Columns[id_library]" />
+                    <inputColumn
+                      refId="Package\数据流任务\write_sql_library.Inputs[OLE DB 目标输入].Columns[address]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="address"
+                      externalMetadataColumnId="Package\数据流任务\write_sql_library.Inputs[OLE DB 目标输入].ExternalColumns[address]"
+                      lineageId="Package\数据流任务\open_library.Outputs[Excel 源输出].Columns[address]" />
+                    <inputColumn
+                      refId="Package\数据流任务\write_sql_library.Inputs[OLE DB 目标输入].Columns[open_time]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="open_time"
+                      externalMetadataColumnId="Package\数据流任务\write_sql_library.Inputs[OLE DB 目标输入].ExternalColumns[opening_time]"
+                      lineageId="Package\数据流任务\open_library.Outputs[Excel 源输出].Columns[open_time]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\write_sql_library.Inputs[OLE DB 目标输入].ExternalColumns[id_library]"
+                      dataType="i4"
+                      name="id_library" />
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\write_sql_library.Inputs[OLE DB 目标输入].ExternalColumns[address]"
+                      dataType="wstr"
+                      length="50"
+                      name="address" />
+                    <externalMetadataColumn
+                      refId="Package\数据流任务\write_sql_library.Inputs[OLE DB 目标输入].ExternalColumns[opening_time]"
+                      dataType="dbDate"
+                      name="opening_time" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\数据流任务\write_sql_library.Outputs[OLE DB 目标错误输出]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB 目标错误输出"
+                  synchronousInputId="Package\数据流任务\write_sql_library.Inputs[OLE DB 目标输入]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\数据流任务\write_sql_library.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\数据流任务\write_sql_library.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\数据流任务\write_sql_library.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\数据流任务\write_sql_library.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\数据流任务\派生列 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="派生列;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;0"
+              description="通过对转换输入列应用表达式来创建新的列值。创建新列或覆盖现有列。例如，将 &quot;first name&quot; 列和 &quot;last name&quot; 列中的值连接在一起以创建一个 &quot;full name&quot; 列。"
+              name="派生列 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\数据流任务\派生列 1.Inputs[派生列输入]"
+                  description="派生列转换的输入"
+                  name="派生列输入">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\数据流任务\派生列 1.Inputs[派生列输入].Columns[time]"
+                      cachedDataType="date"
+                      cachedName="time"
+                      errorOrTruncationOperation="计算"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\数据流任务\open_library_book.Outputs[Excel 源输出].Columns[time]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="派生列表达式"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="派生列友好表达式"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\数据流任务\派生列 1.Outputs[派生列输出]"
+                  description="派生列转换的默认输出"
+                  exclusionGroup="1"
+                  name="派生列输出"
+                  synchronousInputId="Package\数据流任务\派生列 1.Inputs[派生列输入]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\数据流任务\派生列 1.Outputs[派生列错误输出]"
+                  description="派生列转换的错误输出"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="派生列错误输出"
+                  synchronousInputId="Package\数据流任务\派生列 1.Inputs[派生列输入]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\数据流任务\派生列 1.Outputs[派生列错误输出].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\数据流任务\派生列 1.Outputs[派生列错误输出].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\数据流任务\派生列 1.Outputs[派生列错误输出].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\数据流任务\派生列 1.Outputs[派生列错误输出].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\数据流任务.Paths[Excel 源输出]"
+              endId="Package\数据流任务\write_sql_book.Inputs[OLE DB 目标输入]"
+              name="Excel 源输出"
+              startId="Package\数据流任务\open_book.Outputs[Excel 源输出]" />
+            <path
+              refId="Package\数据流任务.Paths[Excel 源输出1]"
+              endId="Package\数据流任务\派生列 1.Inputs[派生列输入]"
+              name="Excel 源输出"
+              startId="Package\数据流任务\open_library_book.Outputs[Excel 源输出]" />
+            <path
+              refId="Package\数据流任务.Paths[Excel 源输出2]"
+              endId="Package\数据流任务\write_sql_library.Inputs[OLE DB 目标输入]"
+              name="Excel 源输出"
+              startId="Package\数据流任务\open_library.Outputs[Excel 源输出]" />
+            <path
+              refId="Package\数据流任务.Paths[派生列输出]"
+              endId="Package\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入]"
+              name="派生列输出"
+              startId="Package\数据流任务\派生列 1.Outputs[派生列输出]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[约束]"
+      DTS:CreationName=""
+      DTS:DTSID="{9AF1732D-CE5D-40B2-8BEB-011206714946}"
+      DTS:From="Package\SQL Task1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="约束"
+      DTS:To="Package\数据流任务" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[约束 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{770DD75E-09F6-4F1E-9C64-CBA962712F41}"
+      DTS:From="Package\SQL Task2"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="约束 1"
+      DTS:To="Package\数据流任务" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[约束 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{8BEE815A-7F2B-40AC-8ECB-5978FFB0C7FF}"
+      DTS:From="Package\SQL Task3"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="约束 2"
+      DTS:To="Package\数据流任务" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--此 CDATA 部分包含包的布局信息。该部分包括(x,y)坐标、宽度和高度之类的信息。-->
+<!--如果您手动编辑此部分并且出错，则可以删除此部分。 -->
+<!--该包仍将能够正常加载，但以前的布局信息将丢失，并且设计器将自动在设计图面上重新排列这些元素。-->
+<Objects
+  Version="sql12">
+  <!--下面的每个节点都将包含不会影响运行时行为的属性。-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="139.2,41.6"
+          Id="Package\数据流任务"
+          TopLeft="119.499998219311,165.822217829434" />
+        <NodeLayout
+          Size="132.8,41.6"
+          Id="Package\SQL Task1"
+          TopLeft="39.9999994039536,44.4888877103358" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[约束]"
+          TopLeft="106.399999403954,86.0888877103359">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60.833332148691,79.7333301190978"
+              Start="0,0"
+              End="60.833332148691,72.2333301190978">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.2963617297375" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.2963617297375"
+                    Point2="0,47.2963617297375"
+                    Point3="4,47.2963617297375" />
+                  <mssgle:LineSegment
+                    End="56.833332148691,47.2963617297375" />
+                  <mssgle:CubicBezierSegment
+                    Point1="56.833332148691,47.2963617297375"
+                    Point2="60.833332148691,47.2963617297375"
+                    Point3="60.833332148691,51.2963617297375" />
+                  <mssgle:LineSegment
+                    End="60.833332148691,72.2333301190978" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="132.8,41.6"
+          Id="Package\SQL Task3"
+          TopLeft="344.49999486655,249.599993387858" />
+        <NodeLayout
+          Size="132.8,41.6"
+          Id="Package\SQL Task2"
+          TopLeft="313.999995321036,56.0444429597737" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[约束 2]"
+          TopLeft="410.89999486655,249.599993387858">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-221.799996647239,-42.1777755584247"
+              Start="0,0"
+              End="-221.799996647239,-34.6777755584247">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-17.0888877792123" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-17.0888877792123"
+                    Point2="0,-21.0888877792123"
+                    Point3="-4,-21.0888877792123" />
+                  <mssgle:LineSegment
+                    End="-217.799996647239,-21.0888877792123" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-217.799996647239,-21.0888877792123"
+                    Point2="-221.799996647239,-21.0888877792123"
+                    Point3="-221.799996647239,-25.0888877792123" />
+                  <mssgle:LineSegment
+                    End="-221.799996647239,-34.6777755584247" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[约束 1]"
+          TopLeft="380.399995321035,97.6444429597737">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-169.433330435058,68.1777748696599"
+              Start="0,0"
+              End="-169.433330435058,60.6777748696599">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.4418164567755" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.4418164567755"
+                    Point2="0,40.4418164567755"
+                    Point3="-4,40.4418164567755" />
+                  <mssgle:LineSegment
+                    End="-165.433330435058,40.4418164567755" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-165.433330435058,40.4418164567755"
+                    Point2="-169.433330435058,40.4418164567755"
+                    Point3="-169.433330435058,44.4418164567755" />
+                  <mssgle:LineSegment
+                    End="-169.433330435058,60.6777748696599" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\数据流任务">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\数据流任务\write_sql_book"
+          TopLeft="252.499996237457,169.288884404265" />
+        <NodeLayout
+          Size="132.8,41.6"
+          Id="Package\数据流任务\open_book"
+          TopLeft="173.499997414649,14.4444440617974" />
+        <EdgeLayout
+          Id="Package\数据流任务.Paths[Excel 源输出]"
+          TopLeft="239.899997414649,56.0444440617974">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="94.1999988228082,113.244440342468"
+              Start="0,0"
+              End="94.1999988228082,105.744440342468">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.6222201712338" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.6222201712338"
+                    Point2="0,56.6222201712338"
+                    Point3="4,56.6222201712338" />
+                  <mssgle:LineSegment
+                    End="90.1999988228082,56.6222201712338" />
+                  <mssgle:CubicBezierSegment
+                    Point1="90.1999988228082,56.6222201712338"
+                    Point2="94.1999988228082,56.6222201712338"
+                    Point3="94.1999988228082,60.6222201712338" />
+                  <mssgle:LineSegment
+                    End="94.1999988228082,105.744440342468" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\数据流任务\open_library"
+          TopLeft="33.9999994933605,127.111107743817" />
+        <NodeLayout
+          Size="180.8,41.6"
+          Id="Package\数据流任务\write_sql_library"
+          TopLeft="102.499998472631,295.244436623138" />
+        <NodeLayout
+          Size="180.8,41.6"
+          Id="Package\数据流任务\open_library_book"
+          TopLeft="495.999992609024,51.4666657483136" />
+        <NodeLayout
+          Size="145.6,41.6"
+          Id="Package\数据流任务\OLE DB 目标"
+          TopLeft="495.499992616475,284.311104024487" />
+        <NodeLayout
+          Size="126.4,41.6"
+          Id="Package\数据流任务\派生列 1"
+          TopLeft="477.499992884696,157.19999628067" />
+        <EdgeLayout
+          Id="Package\数据流任务.Paths[Excel 源输出1]"
+          TopLeft="586.399992609024,93.0666657483137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-45.6999997243286,64.1333305323567"
+              Start="0,0"
+              End="-45.6999997243286,56.6333305323567">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.0666652661783" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.0666652661783"
+                    Point2="0,32.0666652661783"
+                    Point3="-4,32.0666652661783" />
+                  <mssgle:LineSegment
+                    End="-41.6999997243286,32.0666652661783" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-41.6999997243286,32.0666652661783"
+                    Point2="-45.6999997243286,32.0666652661783"
+                    Point3="-45.6999997243286,36.0666652661783" />
+                  <mssgle:LineSegment
+                    End="-45.6999997243286,56.6333305323567" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\数据流任务.Paths[派生列输出]"
+          TopLeft="540.699992884696,198.79999628067">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="27.599999731779,85.5111077438167"
+              Start="0,0"
+              End="27.599999731779,78.0111077438167">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.7555538719083" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.7555538719083"
+                    Point2="0,42.7555538719083"
+                    Point3="4,42.7555538719083" />
+                  <mssgle:LineSegment
+                    End="23.599999731779,42.7555538719083" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.599999731779,42.7555538719083"
+                    Point2="27.599999731779,42.7555538719083"
+                    Point3="27.599999731779,46.7555538719083" />
+                  <mssgle:LineSegment
+                    End="27.599999731779,78.0111077438167" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\数据流任务.Paths[Excel 源输出2]"
+          TopLeft="109.199999493361,168.711107743817">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="83.6999989792705,126.533328879321"
+              Start="0,0"
+              End="83.6999989792705,119.033328879321">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.2666644396606" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,59.2666644396606"
+                    Point2="0,63.2666644396606"
+                    Point3="4,63.2666644396606" />
+                  <mssgle:LineSegment
+                    End="79.6999989792705,63.2666644396606" />
+                  <mssgle:CubicBezierSegment
+                    Point1="79.6999989792705,63.2666644396606"
+                    Point2="83.6999989792705,63.2666644396606"
+                    Point3="83.6999989792705,67.2666644396606" />
+                  <mssgle:LineSegment
+                    End="83.6999989792705,119.033328879321" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\数据流任务\write_sql_book">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\数据流任务\open_book">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\数据流任务\open_library">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\数据流任务\write_sql_library">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\数据流任务\open_library_book">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\数据流任务\OLE DB 目标">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
